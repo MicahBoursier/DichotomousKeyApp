@@ -25,6 +25,7 @@ public class BirdScreen extends AppCompatActivity {
         nameView.setText(name);
         TextView descView = findViewById(R.id.descView);
         descView.setText(desc);
+        ((ThisApp) this.getApplication()).addBird(name, desc);
     }
 
     public void backToSearch (View view) {

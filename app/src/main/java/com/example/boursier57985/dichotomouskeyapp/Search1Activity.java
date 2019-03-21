@@ -51,31 +51,29 @@ public class Search1Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         screen = getIntent().getIntExtra("EXTRA_START_SCREEN", 0);
         setContentView(R.layout.activity_search1);
-        SetScreenOnStart(screen);
-        buttonA = (Button)findViewById(R.id.buttonA);
-        buttonB = (Button)findViewById(R.id.buttonB);
-        buttonC = (Button)findViewById(R.id.buttonC);
-        buttonD = (Button)findViewById(R.id.buttonD);
-        buttonE = (Button)findViewById(R.id.buttonE);
-        buttonF = (Button)findViewById(R.id.buttonF);
-        buttonG = (Button)findViewById(R.id.buttonG);
-        buttonH = (Button)findViewById(R.id.buttonH);
-        buttonI = (Button)findViewById(R.id.buttonI);
-        buttonJ = (Button)findViewById(R.id.buttonJ);
-        buttonK = (Button)findViewById(R.id.buttonK);
-        buttonL = (Button)findViewById(R.id.buttonL);
-        buttonM = (Button)findViewById(R.id.buttonM);
-        buttonN = (Button)findViewById(R.id.buttonN);
-        buttonO = (Button)findViewById(R.id.buttonO);
-        buttonP = (Button)findViewById(R.id.buttonP);
-        buttonQ = (Button)findViewById(R.id.buttonQ);
-        buttonR = (Button)findViewById(R.id.buttonR);
-        buttonS = (Button)findViewById(R.id.buttonS);
-        buttonT = (Button)findViewById(R.id.buttonT);
-        buttonU = (Button)findViewById(R.id.buttonU);
-        buttonV = (Button)findViewById(R.id.buttonV);
-        buttonW = (Button)findViewById(R.id.buttonW);
-        screen = 1;
+        buttonA = (Button) findViewById(R.id.buttonA);
+        buttonB = (Button) findViewById(R.id.buttonB);
+        buttonC = (Button) findViewById(R.id.buttonC);
+        buttonD = (Button) findViewById(R.id.buttonD);
+        buttonE = (Button) findViewById(R.id.buttonE);
+        buttonF = (Button) findViewById(R.id.buttonF);
+        buttonG = (Button) findViewById(R.id.buttonG);
+        buttonH = (Button) findViewById(R.id.buttonH);
+        buttonI = (Button) findViewById(R.id.buttonI);
+        buttonJ = (Button) findViewById(R.id.buttonJ);
+        buttonK = (Button) findViewById(R.id.buttonK);
+        buttonL = (Button) findViewById(R.id.buttonL);
+        buttonM = (Button) findViewById(R.id.buttonM);
+        buttonN = (Button) findViewById(R.id.buttonN);
+        buttonO = (Button) findViewById(R.id.buttonO);
+        buttonP = (Button) findViewById(R.id.buttonP);
+        buttonQ = (Button) findViewById(R.id.buttonQ);
+        buttonR = (Button) findViewById(R.id.buttonR);
+        buttonS = (Button) findViewById(R.id.buttonS);
+        buttonT = (Button) findViewById(R.id.buttonT);
+        buttonU = (Button) findViewById(R.id.buttonU);
+        buttonV = (Button) findViewById(R.id.buttonV);
+        buttonW = (Button) findViewById(R.id.buttonW);
         buttons = new Button[23];
         buttons[0] = buttonA;
         buttons[1] = buttonB;
@@ -100,8 +98,14 @@ public class Search1Activity extends AppCompatActivity {
         buttons[20] = buttonU;
         buttons[21] = buttonV;
         buttons[22] = buttonW;
-        hideButtons (buttonB);
+        if (screen == 0) {
+            screen = 1;
+            hideButtons(buttonB);
+        } else {
+            SetScreenOnStart(screen);
+        }
     }
+
 
     public void SetScreenOnStart(int scr) {
         if (scr == 1) {
@@ -199,6 +203,11 @@ public class Search1Activity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void GoHome(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
     public void hideButtons (Button b) {
         int tempTag = Integer.parseInt(b.getTag().toString());
         for (int i = 0; i < 23; i++) {
@@ -211,7 +220,9 @@ public class Search1Activity extends AppCompatActivity {
     }
 
     public void backTransform (View view) {
-        if (screen == 2) {
+        if (screen == 1) {
+            GoHome(view);
+        } else if (screen == 2) {
             setsc1();
         } else if (screen == 3) {
             setsc1();
