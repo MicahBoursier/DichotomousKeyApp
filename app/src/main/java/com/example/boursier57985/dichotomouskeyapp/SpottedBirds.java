@@ -1,7 +1,9 @@
 package com.example.boursier57985.dichotomouskeyapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 public class SpottedBirds extends AppCompatActivity {
@@ -32,5 +34,14 @@ public class SpottedBirds extends AppCompatActivity {
             nameAView.setText(((ThisApp) this.getApplication()).getName((((ThisApp) this.getApplication()).getLength()) - 1));
             descAView.setText(((ThisApp) this.getApplication()).getDesc((((ThisApp) this.getApplication()).getLength()) - 1));
         }
+    }
+
+    public void backToMenu (View view) {
+        sendMessage();
+    }
+
+    public void sendMessage() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }
