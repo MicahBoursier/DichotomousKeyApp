@@ -26,7 +26,7 @@ public class ThisApp extends Application {
     }
 
     public void deleteBird (int i) {
-        if (i <= names.size()) {
+        if (i < names.size()) {
             names.remove(i);
             desc.remove(i);
         }
