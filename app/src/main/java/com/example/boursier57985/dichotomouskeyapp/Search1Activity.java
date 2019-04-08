@@ -225,7 +225,7 @@ public class Search1Activity extends AppCompatActivity {
         } else if (screen == 2) {
             setsc1();
         } else if (screen == 3) {
-            setsc1();
+            setsc2();
         } else if (screen == 4) {
             setsc3();
         } else if (screen == 5) {
@@ -1017,5 +1017,6 @@ public class Search1Activity extends AppCompatActivity {
         buttonE.setText("Brownish, with crest of long stiff feathers; neck is long, head is small, bill is short and stout. Young have 2 claws on wings. South American Rain Forests. Hoatzin.");
         hideButtons(buttonE);
     }
+
 
 }
