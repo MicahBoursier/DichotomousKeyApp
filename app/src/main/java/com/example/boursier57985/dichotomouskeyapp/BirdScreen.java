@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class BirdScreen extends AppCompatActivity {
@@ -20,11 +21,15 @@ public class BirdScreen extends AppCompatActivity {
         String name = extras.getString("EXTRA_NAME");
         String desc = extras.getString("EXTRA_DESC");
         Integer scr = extras.getInt("EXTRA_SCR");
+        String img = (extras.getString("EXTRA_IMG")).toLowerCase();
+        int id = getResources().getIdentifier(img, "drawable", getPackageName());
         lastScr = scr;
         TextView nameView = findViewById(R.id.nameView);
         nameView.setText(name);
         TextView descView = findViewById(R.id.descView);
         descView.setText(desc);
+        ImageView imageView = findViewById(R.id.imageView);
+        imageView.setImageResource(id);
         ((ThisApp) this.getApplication()).addBird(name, desc);
     }
 

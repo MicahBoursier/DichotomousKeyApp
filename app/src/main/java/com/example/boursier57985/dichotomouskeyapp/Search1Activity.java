@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +20,7 @@ public class Search1Activity extends AppCompatActivity {
 
     public static final String EXTRA_NAME = "com.example.DichotomousKeyApp.MESSAGE";
     public static final String EXTRA_DESC = "com.example.DichotomousKeyApp.MESSAGE";
+    public static final String EXTRA_IMG = "com.example.DichotomousKeyApp.MESSAGE";
     Button buttonA;
     Button buttonB;
     Button buttonC;
@@ -193,12 +195,13 @@ public class Search1Activity extends AppCompatActivity {
         }
     }
 
-    public void birdScr(View view, String name, String desc) {
+    public void birdScr(View view, String name, String desc, String image) {
         Intent intent = new Intent(this, BirdScreen.class);
         Bundle extras = new Bundle();
         extras.putString("EXTRA_NAME", name);
         extras.putString("EXTRA_DESC", desc);
         extras.putInt("EXTRA_SCR", screen);
+        extras.putString("EXTRA_IMG",image);
         intent.putExtras(extras);
         startActivity(intent);
     }
@@ -309,19 +312,19 @@ public class Search1Activity extends AppCompatActivity {
         if (screen == 1) {
             setsc2();
         } else if (screen == 2) {
-            birdScr(view, "Family Pelecanidae", "Pelicans are a genus of large water birds that make up the family Pelecanidae. They are characterised by a long beak and a large throat pouch used for catching prey and draining water from the scooped-up contents before swallowing.");
+            birdScr(view, "Family Pelecanidae", "Pelicans are a genus of large water birds that make up the family Pelecanidae. They are characterised by a long beak and a large throat pouch used for catching prey and draining water from the scooped-up contents before swallowing.","Pelecanidae");
         } else if (screen == 3) {
             setsc4();
         } else if (screen == 4) {
             setsc5();
         } else if (screen == 5) {
-            birdScr(view, "Family Diomedidae", "The family Diomedeidae currently includes 21 species in four genera, Diomedea, Thalassarche, Phoebastria and Phoebetria. The albatrosses are among the largest of flying bird species and are powerful fliers. Their courtship displays are spectacular with elaborate rituals. They are usually colonial nesters and some colonies show high nest density.");
+            birdScr(view, "Family Diomedeidae", "The family Diomedeidae currently includes 21 species in four genera, Diomedea, Thalassarche, Phoebastria and Phoebetria. The albatrosses are among the largest of flying bird species and are powerful fliers. Their courtship displays are spectacular with elaborate rituals. They are usually colonial nesters and some colonies show high nest density.","Diomedeidae");
         } else if (screen == 6) {
-            birdScr(view, "Genus Fulmarus", "The fulmars are tubenosed seabirds of the family Procellariidae. The family consists of two extant species and two extinct fossil species from the Miocene. Fulmars superficially resemble gulls, but are readily distinguished by their flight on stiff wings, and their tube noses.");
+            birdScr(view, "Genus Fulmarus", "The fulmars are tubenosed seabirds of the family Procellariidae. The family consists of two extant species and two extinct fossil species from the Miocene. Fulmars superficially resemble gulls, but are readily distinguished by their flight on stiff wings, and their tube noses.","Fulmar");
         } else if (screen == 7) {
             setsc8();
         } else if (screen == 8) {
-          birdScr(view, "Family Apodidae", "The common swift is a medium-sized bird, superficially similar to the barn swallow or house martin but somewhat larger, though not stemming from those passerine species, being in the order Apodiformes. The resemblances between the groups are due to convergent evolution, reflecting similar contextual development.");
+          birdScr(view, "Family Apodidae", "The common swift is a medium-sized bird, superficially similar to the barn swallow or house martin but somewhat larger, though not stemming from those passerine species, being in the order Apodiformes. The resemblances between the groups are due to convergent evolution, reflecting similar contextual development.","Apodidae");
         } else if (screen == 9) {
             setsc10();
         } else if (screen == 10) {
@@ -331,19 +334,19 @@ public class Search1Activity extends AppCompatActivity {
         } else if (screen == 12) {
             setsc13();
         } else if (screen == 13) {
-           birdScr(view, "Family Strigidae", "The family Strigidae is the larger of the two families of owls, with close to 190 species distributed among 25 genera. The internal taxonomy is very complicated, owing in part to the similarities between species, and in part to the fact that many have been little studied. They are found worldwide, on every continent of the world except Antarctica, but 80% of the strigids are found in the tropics. Strigid owls cover nearly all terrestrial habitats, though 95% are forest-dwelling species.");
+           birdScr(view, "Family Strigidae", "The family Strigidae is the larger of the two families of owls, with close to 190 species distributed among 25 genera. The internal taxonomy is very complicated, owing in part to the similarities between species, and in part to the fact that many have been little studied. They are found worldwide, on every continent of the world except Antarctica, but 80% of the strigids are found in the tropics. Strigid owls cover nearly all terrestrial habitats, though 95% are forest-dwelling species.","Strigidae");
         } else if (screen == 14) {
             setsc15();
         } else if (screen == 15) {
-            birdScr(view, "Family Capitonidae", "New World barbets, family Capitonidae, are near passerine birds of the order Piciformes which inhabit humid forests in Central and South America. They are closely related to the toucans. The New World barbets are plump birds, with short necks and large heads. They get their name from the bristles which fringe their heavy bills. Most species are brightly coloured and live in tropical forest.");
+            birdScr(view, "Family Capitonidae", "New World barbets, family Capitonidae, are near passerine birds of the order Piciformes which inhabit humid forests in Central and South America. They are closely related to the toucans. The New World barbets are plump birds, with short necks and large heads. They get their name from the bristles which fringe their heavy bills. Most species are brightly coloured and live in tropical forest.","Capitonidae");
         } else if (screen == 16) {
             setsc17();
         } else if (screen == 17) {
-            birdScr(view, "Family Gaviidae", "Loon. The loons (North America) or divers (Great Britain/Ireland) are a group of aquatic birds found in many parts of North America and northern Eurasia. All living species of loons are members of the genus Gavia, family Gaviidae and order Gaviiformes.");
+            birdScr(view, "Family Gaviidae", "Loon. The loons (North America) or divers (Great Britain/Ireland) are a group of aquatic birds found in many parts of North America and northern Eurasia. All living species of loons are members of the genus Gavia, family Gaviidae and order Gaviiformes.","Gaviidae");
         } else if (screen == 18) {
             setsc18();
         } else if (screen == 19) {
-            birdScr(view, "Family Accipitridae", "The Family Accipitridae includes ten natural groups of raptors such as kites, fish-eagles, Old World vultures, snake-eagles, harriers, sparrowhawks, hawks, buzzards, large eagles and booted eagles. They occur in the whole world.");
+            birdScr(view, "Family Accipitridae", "The Family Accipitridae includes ten natural groups of raptors such as kites, fish-eagles, Old World vultures, snake-eagles, harriers, sparrowhawks, hawks, buzzards, large eagles and booted eagles. They occur in the whole world.","Accipitridae");
         } else if (screen == 20) {
             setsc21();
         } else if (screen == 21) {
@@ -351,43 +354,43 @@ public class Search1Activity extends AppCompatActivity {
         } else if (screen == 22) {
             setsc23();
         } else if (screen == 23) {
-            birdScr(view, "Olor columbianus", "The tundra swan is a small Holarctic swan. The two taxa within it are usually regarded as conspecific, but are also sometimes split into two species: Bewick's swan of the Palaearctic and the whistling swan proper of the Nearctic.");
+            birdScr(view, "Olor columbianus", "The tundra swan is a small Holarctic swan. The two taxa within it are usually regarded as conspecific, but are also sometimes split into two species: Bewick's swan of the Palaearctic and the whistling swan proper of the Nearctic.","Olor_columbianus");
         } else if (screen == 24) {
             setsc25();
         } else if (screen == 25) {
             setsc26();
         } else if (screen == 26) {
-            birdScr(view, "Branta canadensis", "The Canada goose is a large wild goose species with a black head and neck, white cheeks, white under its chin, and a brown body. Native to arctic and temperate regions of North America, its migration occasionally reaches northern Europe.");
+            birdScr(view, "Branta canadensis", "The Canada goose is a large wild goose species with a black head and neck, white cheeks, white under its chin, and a brown body. Native to arctic and temperate regions of North America, its migration occasionally reaches northern Europe.","Branta_canadensis");
         } else if (screen == 27) {
-            birdScr(view, "Genus Anser", "The waterfowl genus Anser includes all grey geese. Its name is derived from anser the Latin for \"goose\". It belongs to the true geese and swan subfamily.");
+            birdScr(view, "Genus Anser", "The waterfowl genus Anser includes all grey geese. Its name is derived from anser the Latin for \"goose\". It belongs to the true geese and swan subfamily.","Genus_Anser");
         } else if (screen == 28) {
             setsc29();
         } else if (screen == 29) {
             setsc30();
         } else if (screen == 30) {
-            birdScr(view, "Mergus merganser", "The common merganser or goosander is a large duck of rivers and lakes in forested areas of Europe, northern and central Asia, and North America. The common merganser eats fish and nests in holes in trees.");
+            birdScr(view, "Mergus merganser", "The common merganser or goosander is a large duck of rivers and lakes in forested areas of Europe, northern and central Asia, and North America. The common merganser eats fish and nests in holes in trees.","Mergus_merganser");
         } else if (screen == 31) {
             setsc32();
         } else if (screen == 32) {
             setsc33();
         } else if (screen == 33) {
-            birdScr(view, "Genus Oxyura", "The stiff-tailed ducks, Oxyura, are part of the Oxyurini tribe of ducks. The genus name is derived from Ancient Greek oxus, \"sharp\", and oura, \"tail\". All have, as their name implies, long, stiff tail feathers, which are erected when the bird is resting. All have relatively large, swollen bills.");
+            birdScr(view, "Genus Oxyura", "The stiff-tailed ducks, Oxyura, are part of the Oxyurini tribe of ducks. The genus name is derived from Ancient Greek oxus, \"sharp\", and oura, \"tail\". All have, as their name implies, long, stiff tail feathers, which are erected when the bird is resting. All have relatively large, swollen bills.","Genus_Oxyura");
         } else if (screen == 34) {
-            birdScr(view, "Genus Spathula", "The northern shoveler, known simply in Britain as the shoveler, is a common and widespread duck. It breeds in northern areas of Europe and Asia and across most of North America, wintering in southern Europe, Africa, the Indian subcontinent, Southeast Asia, and Central, and northern South America.");
+            birdScr(view, "Genus Spatula", "The northern shoveler, known simply in Britain as the shoveler, is a common and widespread duck. It breeds in northern areas of Europe and Asia and across most of North America, wintering in southern Europe, Africa, the Indian subcontinent, Southeast Asia, and Central, and northern South America.","Genus_Spatula");
         } else if (screen == 35) {
             setsc36();
         } else if (screen == 36) {
-            birdScr(view, "Family Ardeidae", "Ardeidae is a family of birds in the order Pelecaniformes. They are medium to large wading birds found mostly on coastal and inland waterways. There are 18 Ardeidae Genus with approximately 66 species.");
+            birdScr(view, "Family Ardeidae", "Ardeidae is a family of birds in the order Pelecaniformes. They are medium to large wading birds found mostly on coastal and inland waterways. There are 18 Ardeidae Genus with approximately 66 species.","Family_Ardeidae");
         } else if (screen == 37) {
             setsc38();
         } else if (screen == 38) {
-            birdScr(view, "Family Tyrannidae", "The tyrant flycatchers (Tyrannidae) are a family of passerine birds which occur throughout North and South America. They are considered the largest family of birds, with more than 400 species. They are the most diverse avian family in every country in the Americas, except for the United States and Canada.");
+            birdScr(view, "Family Tyrannidae", "The tyrant flycatchers (Tyrannidae) are a family of passerine birds which occur throughout North and South America. They are considered the largest family of birds, with more than 400 species. They are the most diverse avian family in every country in the Americas, except for the United States and Canada.","Family_Tyrannidae");
         } else if (screen == 39) {
-            birdScr(view, "Family Charadriidae", "The bird family Charadriidae includes the plovers, dotterels, and lapwings, about 64 to 66 species in all.");
+            birdScr(view, "Family Charadriidae", "The bird family Charadriidae includes the plovers, dotterels, and lapwings, about 64 to 66 species in all.","Family_Charadriidae");
         } else if (screen == 40) {
-            birdScr(view, "Family Rallidae", "Coots are small water birds that are members of the rail family, Rallidae. They constitute the genus Fulica, the name being the Latin for \"coot\". Coots have predominantly black plumage, and—unlike many rails—they are usually easy to see, often swimming in open water. They are close relatives of the moorhen.");
+            birdScr(view, "Family Rallidae", "Coots are small water birds that are members of the rail family, Rallidae. They constitute the genus Fulica, the name being the Latin for \"coot\". Coots have predominantly black plumage, and—unlike many rails—they are usually easy to see, often swimming in open water. They are close relatives of the moorhen.","Family_Rallidae");
         } else if (screen == 41){
-            birdScr(view,"Family Tetraonidae","Family Tetraonidae - Grouses. This natural and fairly homogeneous group belongs to the order Galliformes, and is sometimes regarded as a subfamily within the Phasianidae.");
+            birdScr(view,"Family Tetraonidae","Family Tetraonidae - Grouses. This natural and fairly homogeneous group belongs to the order Galliformes, and is sometimes regarded as a subfamily within the Phasianidae.","Family_Tetraonidae");
         }
     }
 
@@ -395,281 +398,281 @@ public class Search1Activity extends AppCompatActivity {
         if (screen == 1) {
             setsc3();
         } else if (screen == 2) {
-            birdScr(view, "Family Sulidae", "The bird family Sulidae comprises the gannets and boobies. Collectively called sulids, they are medium-large coastal seabirds that plunge-dive for fish and similar prey. The ten species in this family are often considered congeneric in older sources, placing all in the genus Sula. However, Sula (true boobies) and Morus (gannets) can be readily distinguished by morphological, behavioral, and DNA sequence characters.");
+            birdScr(view, "Family Sulidae", "The bird family Sulidae comprises the gannets and boobies. Collectively called sulids, they are medium-large coastal seabirds that plunge-dive for fish and similar prey. The ten species in this family are often considered congeneric in older sources, placing all in the genus Sula. However, Sula (true boobies) and Morus (gannets) can be readily distinguished by morphological, behavioral, and DNA sequence characters.","Family_Sulidae");
         } else if (screen == 3) {
             setsc7();
         } else if (screen == 4) {
-            birdScr(view, "Family Caprimulgidae", "Caprimulgidae, bird family of the order Caprimulgiformes. Birds of this family are commonly called nightjars, from their jarring cries, or goatsuckers, from the ancient superstition that they used their very wide mouths to milk goats. They are insectivorous birds that take flying insects on the wing, usually at night.");
+            birdScr(view, "Family Caprimulgidae", "Caprimulgidae, bird family of the order Caprimulgiformes. Birds of this family are commonly called nightjars, from their jarring cries, or goatsuckers, from the ancient superstition that they used their very wide mouths to milk goats. They are insectivorous birds that take flying insects on the wing, usually at night.","Family_Caprimulgidae");
         } else if (screen == 5) {
             setsc6();
         } else if (screen == 6) {
-            birdScr(view, "Genus Puffinus", "Puffinus is a genus of seabirds in the order Procellariiformes. It comprises about 20 small to medium-sized shearwaters. Two other shearwater genera are named: Calonectris, which comprises three or four large shearwaters, and Ardenna with another seven species.");
+            birdScr(view, "Genus Puffinus", "Puffinus is a genus of seabirds in the order Procellariiformes. It comprises about 20 small to medium-sized shearwaters. Two other shearwater genera are named: Calonectris, which comprises three or four large shearwaters, and Ardenna with another seven species.","Genus_Puffinus");
         } else if (screen == 7) {
             setsc9();
         } else if (screen == 8) {
-            birdScr(view, "Family Hemiprocnidae", "Treeswifts or crested swifts are a family, Hemiprocnidae, of aerial near passerine birds, closely related to the true swifts. Treeswifts are small to medium-sized swifts, ranging in length from 15–30 cm. They have long wings, with most of the length coming from the length of the primaries; their arms are actually quite short.");
+            birdScr(view, "Family Hemiprocnidae", "Treeswifts or crested swifts are a family, Hemiprocnidae, of aerial near passerine birds, closely related to the true swifts. Treeswifts are small to medium-sized swifts, ranging in length from 15–30 cm. They have long wings, with most of the length coming from the length of the primaries; their arms are actually quite short.","Family_Hemiprocnidae");
         } else if (screen == 9) {
             setsc16();
         } else if (screen == 10) {
-            birdScr(view, "Family Trogonidae", "The trogons and quetzals are birds in the order Trogoniformes which contains only one family, the Trogonidae. The family contains 39 species in seven genera. The fossil record of the trogons dates back 49 million years to the Early Eocene. They might constitute a member of the basal radiation of the order Coraciiformes[1] or be closely related to mousebirds and owls.");
+            birdScr(view, "Family Trogonidae", "The trogons and quetzals are birds in the order Trogoniformes which contains only one family, the Trogonidae. The family contains 39 species in seven genera. The fossil record of the trogons dates back 49 million years to the Early Eocene. They might constitute a member of the basal radiation of the order Coraciiformes[1] or be closely related to mousebirds and owls.","Family_Trogonidae");
         } else if (screen == 11) {
             setsc14();
         } else if (screen == 12) {
-            birdScr(view, "Family Psittacidae", "The family Psittacidae is one of three families of true parrots. It comprises the rough 10 species of subfamily Psittacinae (the Old World or Afrotropical parrots) and 157 of subfamily Arinae (the New World or Neotropical parrots), as well as several species that have gone extinct in recent centuries.[1][2] Some of the most iconic birds in the world are represented here, such as the blue-and-gold macaw among the New World parrots and the grey parrot among the Old World parrots.");
+            birdScr(view, "Family Psittacidae", "The family Psittacidae is one of three families of true parrots. It comprises the rough 10 species of subfamily Psittacinae (the Old World or Afrotropical parrots) and 157 of subfamily Arinae (the New World or Neotropical parrots), as well as several species that have gone extinct in recent centuries.[1][2] Some of the most iconic birds in the world are represented here, such as the blue-and-gold macaw among the New World parrots and the grey parrot among the Old World parrots.","Family_Psittacidae");
         } else if (screen == 13) {
-            birdScr(view, "Family Tytonidae", "Barn owls (family Tytonidae) are one of the two families of owls, the other being the true owls or typical owls, Strigidae. They are medium to large owls with large heads and characteristic heart-shaped faces. They have long, strong legs with powerful talons.");
+            birdScr(view, "Family Tytonidae", "Barn owls (family Tytonidae) are one of the two families of owls, the other being the true owls or typical owls, Strigidae. They are medium to large owls with large heads and characteristic heart-shaped faces. They have long, strong legs with powerful talons.","Family_Tytonidae");
         } else if (screen == 14) {
-            birdScr(view, "Family Cuculidae", "The cuckoos are a family of birds, Cuculidae, the sole taxon in the order Cuculiformes.[1][2][3] The cuckoo family includes the common or European cuckoo, roadrunners, koels, malkohas, couas, coucals and anis. The coucals and anis are sometimes separated as distinct families, the Centropodidae and Crotophagidae respectively.");
+            birdScr(view, "Family Cuculidae", "The cuckoos are a family of birds, Cuculidae, the sole taxon in the order Cuculiformes.[1][2][3] The cuckoo family includes the common or European cuckoo, roadrunners, koels, malkohas, couas, coucals and anis. The coucals and anis are sometimes separated as distinct families, the Centropodidae and Crotophagidae respectively.","Family_Cuculidae");
         } else if (screen == 15) {
-            birdScr(view, "Family Indicatoridae", "Honeyguides (family Indicatoridae) are a near passerine bird species of the order Piciformes. They are also known as indicator birds, or honey birds, although the latter term is also used more narrowly to refer to species of the genus Prodotiscus. They have an Old World tropical distribution, with the greatest number of species in Africa and two in Asia. These birds are best known for their interaction with humans.");
+            birdScr(view, "Family Indicatoridae", "Honeyguides (family Indicatoridae) are a near passerine bird species of the order Piciformes. They are also known as indicator birds, or honey birds, although the latter term is also used more narrowly to refer to species of the genus Prodotiscus. They have an Old World tropical distribution, with the greatest number of species in Africa and two in Asia. These birds are best known for their interaction with humans.","Family_Indicatoridae");
         } else if (screen == 16) {
             setsc18();
         } else if (screen == 17) {
-            birdScr(view, "Family Podicipedidae", "Grebes, Podicipediformes, are a widely distributed order of freshwater diving birds, some of which visit the sea when migrating and in winter. This order contains only a single family, the Podicipedidae, containing 22 species in six extant genera.");
+            birdScr(view, "Family Podicipedidae", "Grebes, Podicipediformes, are a widely distributed order of freshwater diving birds, some of which visit the sea when migrating and in winter. This order contains only a single family, the Podicipedidae, containing 22 species in six extant genera.","Family_Podicipedidae");
         } else if (screen == 18) {
             setsc20();
         } else if (screen == 19) {
-            birdScr(view, "Family Cathartidae", "The New World vulture or condor family Cathartidae contains seven species in five genera, all but one of which are monotypic. It includes five vultures and two condors found in warm and temperate areas of the Americas.");
+            birdScr(view, "Family Cathartidae", "The New World vulture or condor family Cathartidae contains seven species in five genera, all but one of which are monotypic. It includes five vultures and two condors found in warm and temperate areas of the Americas.","Family_Cathartidae");
         } else if (screen == 20) {
             setsc35();
         } else if (screen == 21) {
             setsc24();
         } else if (screen == 22) {
-            birdScr(view, "Cygnus olor", "The mute swan is a species of swan and a member of the waterfowl family Anatidae. It is native to much of Eurasia, and the far north of Africa. It is an introduced species in North America, Australasia and southern Africa. The name 'mute' derives from it being less vocal than other swan species.");
+            birdScr(view, "Cygnus olor", "The mute swan is a species of swan and a member of the waterfowl family Anatidae. It is native to much of Eurasia, and the far north of Africa. It is an introduced species in North America, Australasia and southern Africa. The name 'mute' derives from it being less vocal than other swan species.","Cygnus_olor");
         } else if (screen == 23) {
-            birdScr(view, "Olor buccinator", "The trumpeter swan (Cygnus buccinator) is a species of swan found in North America. The heaviest living bird native to North America, it is also the largest extant species of waterfowl with a wingspan that may exceed 10 ft (3.0 m).[2] It is the American counterpart and a close relative of the whooper swan (Cygnus cygnus) of Eurasia, and even has been considered the same species by some authorities.");
+            birdScr(view, "Olor buccinator", "The trumpeter swan (Cygnus buccinator) is a species of swan found in North America. The heaviest living bird native to North America, it is also the largest extant species of waterfowl with a wingspan that may exceed 10 ft (3.0 m).[2] It is the American counterpart and a close relative of the whooper swan (Cygnus cygnus) of Eurasia, and even has been considered the same species by some authorities.","Olor_buccinator");
         } else if (screen == 24) {
             setsc28();
         } else if (screen == 25) {
             setsc27();
         } else if (screen == 26) {
-            birdScr(view, "Branta bernicla", "The brant, or brent goose, is a species of goose of the genus Branta. The black brant is a pacific North American subspecies. The Brent System, a major oilfield, was named after the species.");
+            birdScr(view, "Branta bernicla", "The brant, or brent goose, is a species of goose of the genus Branta. The black brant is a pacific North American subspecies. The Brent System, a major oilfield, was named after the species.","Branta_bernicla");
         } else if (screen == 27) {
-            birdScr(view, "Philacte canagica", "The emperor goose, also known as the beach goose or the painted goose, is a waterfowl species in the family Anatidae, which contains the ducks, geese, and swans. It is blue-gray in color as an adult and grows to 66–71 centimetres in length.");
+            birdScr(view, "Philacte canagica", "The emperor goose, also known as the beach goose or the painted goose, is a waterfowl species in the family Anatidae, which contains the ducks, geese, and swans. It is blue-gray in color as an adult and grows to 66–71 centimetres in length.","Philacte_canagica");
         } else if (screen == 28) {
             setsc31();
         } else if (screen == 29) {
-            birdScr(view, "Lophodytes cucullatus", "The hooded merganser is a species of small duck. It is the only extant species in the genus Lophodytes. The genus name derives from the Greek language: lophos meaning 'crest', and dutes meaning diver.");
+            birdScr(view, "Lophodytes cucullatus", "The hooded merganser is a species of small duck. It is the only extant species in the genus Lophodytes. The genus name derives from the Greek language: lophos meaning 'crest', and dutes meaning diver.","Lophodytes_cucullatus");
         } else if (screen == 30) {
-            birdScr(view, "Mergus serrator", "The red-breasted merganser is a diving duck, one of the sawbills. The genus name is a Latin word used by Pliny and other Roman authors to refer to an unspecified waterbird, and serrator is a sawyer from Latin serra, \"saw\".");
+            birdScr(view, "Mergus serrator", "The red-breasted merganser is a diving duck, one of the sawbills. The genus name is a Latin word used by Pliny and other Roman authors to refer to an unspecified waterbird, and serrator is a sawyer from Latin serra, \"saw\".","Mergus_serrator");
         } else if (screen == 31) {
-            birdScr(view, "Genus Dendrocygna", "The whistling ducks or tree ducks are a subfamily, Dendrocygninae, of the duck, goose and swan family of birds, Anatidae. They are not true ducks. In other taxonomic schemes, they are considered a separate family, Dendrocygnidae.");
+            birdScr(view, "Genus Dendrocygna", "The whistling ducks or tree ducks are a subfamily, Dendrocygninae, of the duck, goose and swan family of birds, Anatidae. They are not true ducks. In other taxonomic schemes, they are considered a separate family, Dendrocygnidae.","Genus_Dendrocygna");
         } else if (screen == 32) {
             setsc34();
         } else if (screen == 33) {
-            birdScr(view, "Genus Somateria", "Eiders are large seaducks in the genus Somateria. The scientific name is derived from Ancient Greek somatos \"body\" and erion \"wool\", referring to eiderdown. The three extant species all breed in the cooler latitudes of the Northern Hemisphere.");
+            birdScr(view, "Genus Somateria", "Eiders are large seaducks in the genus Somateria. The scientific name is derived from Ancient Greek somatos \"body\" and erion \"wool\", referring to eiderdown. The three extant species all breed in the cooler latitudes of the Northern Hemisphere.","Genus_Somateria");
         } else if (screen == 34) {
-            birdScr(view, "Genus Aix", "Aix is a bird genus that contains two species of ducks: the wood duck, and the Mandarin duck. Aix is an Ancient Greek word used by Aristotle to refer to an unknown diving bird.");
+            birdScr(view, "Genus Aix", "Aix is a bird genus that contains two species of ducks: the wood duck, and the Mandarin duck. Aix is an Ancient Greek word used by Aristotle to refer to an unknown diving bird.","Genus_Aix");
         } else if (screen == 35) {
             setsc37();
         } else if (screen == 36) {
-            birdScr(view, "Family Ciconiidae", "Storks are large, long-legged, long-necked wading birds with long, stout bills. They belong to the family called Ciconiidae, and make up the order Ciconiiformes. Ciconiiformes previously included a number of other families, such as herons and ibises, but those families have been moved to other orders.");
+            birdScr(view, "Family Ciconiidae", "Storks are large, long-legged, long-necked wading birds with long, stout bills. They belong to the family called Ciconiidae, and make up the order Ciconiiformes. Ciconiiformes previously included a number of other families, such as herons and ibises, but those families have been moved to other orders.","Family_Ciconiidae");
         } else if (screen == 37) {
             setsc39();
         } else if (screen == 38) {
-            birdScr(view, "Family Menuridae", "A lyrebird is either of two species of ground-dwelling Australian birds that compose the genus Menura, and the family Menuridae. They are most notable for their superb ability to mimic natural and artificial sounds from their environment, and the striking beauty of the male bird's huge tail when it is fanned out in courtship display. Lyrebirds have unique plumes of neutral-coloured tailfeathers and are among Australia's best-known native birds.");
+            birdScr(view, "Family Menuridae", "A lyrebird is either of two species of ground-dwelling Australian birds that compose the genus Menura, and the family Menuridae. They are most notable for their superb ability to mimic natural and artificial sounds from their environment, and the striking beauty of the male bird's huge tail when it is fanned out in courtship display. Lyrebirds have unique plumes of neutral-coloured tailfeathers and are among Australia's best-known native birds.","Family_Menuridae");
         } else if (screen == 39) {
-            birdScr(view, "Family Scolopacidae", "Sandpipers are a large family, Scolopacidae, of waders or shorebirds. They include many species called sandpipers, as well as those called by names such as curlew and snipe. The majority of these species eat small invertebrates picked out of the mud or soil. Different lengths of bills enable different species to feed in the same habitat, particularly on the coast, without direct competition for food.");
+            birdScr(view, "Family Scolopacidae", "Sandpipers are a large family, Scolopacidae, of waders or shorebirds. They include many species called sandpipers, as well as those called by names such as curlew and snipe. The majority of these species eat small invertebrates picked out of the mud or soil. Different lengths of bills enable different species to feed in the same habitat, particularly on the coast, without direct competition for food.","Family_Scolopacidae");
         } else if (screen == 40) {
-            birdScr(view, "Family Gruidae", "Cranes are a family, the Gruidae, of large, long-legged, and long-necked birds in the group Gruiformes. The 15 species of cranes are placed in four genera. Unlike the similar-looking but unrelated herons, cranes fly with necks outstretched, not pulled back. Cranes live on all continents except Antarctica and South America.");
+            birdScr(view, "Family Gruidae", "Cranes are a family, the Gruidae, of large, long-legged, and long-necked birds in the group Gruiformes. The 15 species of cranes are placed in four genera. Unlike the similar-looking but unrelated herons, cranes fly with necks outstretched, not pulled back. Cranes live on all continents except Antarctica and South America.","Family_Gruidae");
         } else if (screen == 41) {
-            birdScr(view, "Family Phasianidae", "The Phasianidae are a family of heavy, ground-living birds, which includes pheasants, partridges, junglefowl, chickens, turkeys, Old World quail, and peafowl. The family includes many of the most popular gamebirds.");
+            birdScr(view, "Family Phasianidae", "The Phasianidae are a family of heavy, ground-living birds, which includes pheasants, partridges, junglefowl, chickens, turkeys, Old World quail, and peafowl. The family includes many of the most popular gamebirds.","Family_Phasianidae");
         }
     }
 
     public void transformC (View view) {
         if (screen == 2) {
-            birdScr(view, "Family Phalacrocoracidae", "Phalacrocoracidae is a family of approximately 40 species of aquatic birds commonly known as cormorants and shags. Several different classifications of the family have been proposed recently, and the number of genera is disputed.");
+            birdScr(view, "Family Phalacrocoracidae", "Phalacrocoracidae is a family of approximately 40 species of aquatic birds commonly known as cormorants and shags. Several different classifications of the family have been proposed recently, and the number of genera is disputed.","Family_Phalacrocoracidae");
         } else if (screen == 7) {
-            birdScr(view, "Family Spheniscidae", "Penguins (order Sphenisciformes, family Spheniscidae) are an order of flightless birds living in the southern hemisphere. They are not, contrary to popular belief, only found in cold climates, such as Antarctica. Many species live as far north as the Galapagos Islands and will occasionally cross the equator while feeding.");
+            birdScr(view, "Family Spheniscidae", "Penguins (order Sphenisciformes, family Spheniscidae) are an order of flightless birds living in the southern hemisphere. They are not, contrary to popular belief, only found in cold climates, such as Antarctica. Many species live as far north as the Galapagos Islands and will occasionally cross the equator while feeding.","Family_Spheniscidae");
         } else if (screen == 8) {
-            birdScr(view, "Family Trochilidae", "Hummingbirds are birds native to the Americas and constitute the biological family Trochilidae. They are among the smallest of birds, most species measuring 7.5–13 cm (3–5 in) in length. The smallest extant bird species is a hummingbird, the 5 cm (2.0 in) bee hummingbird weighing less than 2.0 g (0.07 oz).");
+            birdScr(view, "Family Trochilidae", "Hummingbirds are birds native to the Americas and constitute the biological family Trochilidae. They are among the smallest of birds, most species measuring 7.5–13 cm (3–5 in) in length. The smallest extant bird species is a hummingbird, the 5 cm (2.0 in) bee hummingbird weighing less than 2.0 g (0.07 oz).","Family_Trochilidae");
         } else if (screen == 15) {
-            birdScr(view, "Family Galbulidae", "The jacamars are a family, Galbulidae, of near passerine birds from tropical South and Central America, extending up to Mexico. The family contains five genera and 18 species. The family is closely related to the puffbirds, another Neotropical family, and the two families are often separated into their own order, Galbuliformes, separate from the Piciformes.");
+            birdScr(view, "Family Galbulidae", "The jacamars are a family, Galbulidae, of near passerine birds from tropical South and Central America, extending up to Mexico. The family contains five genera and 18 species. The family is closely related to the puffbirds, another Neotropical family, and the two families are often separated into their own order, Galbuliformes, separate from the Piciformes.","Family_Galbulidae");
         } else if (screen == 19) {
-            birdScr(view, "Family Falconidae", "The falcons and caracaras are around 60 species of diurnal birds of prey that make up the family Falconidae. The family is divided into two subfamilies, Polyborinae, which includes the caracaras and forest falcons, and Falconinae, the falcons, kestrels and falconets (Microhierax and Spiziapteryx).");
+            birdScr(view, "Family Falconidae", "The falcons and caracaras are around 60 species of diurnal birds of prey that make up the family Falconidae. The family is divided into two subfamilies, Polyborinae, which includes the caracaras and forest falcons, and Falconinae, the falcons, kestrels and falconets (Microhierax and Spiziapteryx).","Family_Falconidae");
         } else if (screen == 33) {
-            birdScr(view, "Genus Aythya", "Aythya is a genus of diving ducks. It has twelve described species. The name Aythya comes from the Ancient Greek word αυθυια, aithuia, which may have referred to a sea-dwelling duck or an auklet. Aythya shihuibas was described from the Late Miocene of China.");
+            birdScr(view, "Genus Aythya", "Aythya is a genus of diving ducks. It has twelve described species. The name Aythya comes from the Ancient Greek word αυθυια, aithuia, which may have referred to a sea-dwelling duck or an auklet. Aythya shihuibas was described from the Late Miocene of China.","Genus_Aythya");
         } else if (screen == 36) {
-            birdScr(view, "Family Threskiornithidae", "The family Threskiornithidae includes 34 species of large wading birds. The family has been traditionally classified into two subfamilies, the ibises and the spoonbills; however recent genetic studies are casting doubt on the arrangement, and revealing the spoonbills to be nested within the old world ibises, and the new world ibises as an early offshoot.");
+            birdScr(view, "Family Threskiornithidae", "The family Threskiornithidae includes 34 species of large wading birds. The family has been traditionally classified into two subfamilies, the ibises and the spoonbills; however recent genetic studies are casting doubt on the arrangement, and revealing the spoonbills to be nested within the old world ibises, and the new world ibises as an early offshoot.","Family_Threskiornithidae");
         } else if (screen == 37) {
             setsc40();
         } else if (screen == 38) {
-            birdScr(view, "Family Alaudidae", "Larks are passerine birds of the family Alaudidae. Larks have a cosmopolitan distribution with the largest number of species occurring in Africa. Only a single species, the horned lark, occurs in North America, and only Horsfield's bush lark occurs in Australia. Habitats vary widely, but many species live in dry regions.");
+            birdScr(view, "Family Alaudidae", "Larks are passerine birds of the family Alaudidae. Larks have a cosmopolitan distribution with the largest number of species occurring in Africa. Only a single species, the horned lark, occurs in North America, and only Horsfield's bush lark occurs in Australia. Habitats vary widely, but many species live in dry regions.","Family_Alaudidae");
         } else if (screen == 39) {
-            birdScr(view, "Family Laridae", "Laridae is a family of seabirds in the order Charadriiformes that includes the gulls, terns and skimmers. It includes around 100 species arranged into 22 genera. They are an adaptable group of mostly aerial birds found worldwide.");
+            birdScr(view, "Family Laridae", "Laridae is a family of seabirds in the order Charadriiformes that includes the gulls, terns and skimmers. It includes around 100 species arranged into 22 genera. They are an adaptable group of mostly aerial birds found worldwide.","Family_Laridae");
         } else if (screen == 40) {
-            birdScr(view, "Family Aramidae", "The limpkin (Aramus guarauna), also called carrao, courlan, and crying bird, is a bird that looks like a large rail, but is skeletally closer to cranes. It is the only extant species in the genus Aramus and the family Aramidae. It is found mostly in wetlands in warm parts of the Americas, from Florida to northern Argentina. It feeds on molluscs, with the diet dominated by apple snails of the genus Pomacea.");
+            birdScr(view, "Family Aramidae", "The limpkin (Aramus guarauna), also called carrao, courlan, and crying bird, is a bird that looks like a large rail, but is skeletally closer to cranes. It is the only extant species in the genus Aramus and the family Aramidae. It is found mostly in wetlands in warm parts of the Americas, from Florida to northern Argentina. It feeds on molluscs, with the diet dominated by apple snails of the genus Pomacea.","Family_Aramidae");
         } else if (screen == 41) {
-            birdScr(view, "Family Numididae", "Guineafowl (/ˈɡɪnifaʊl/; sometimes called \"pet speckled hen\", or \"original fowl\") are birds of the family Numididae in the order Galliformes. They are endemic to Africa and rank among the oldest of the gallinaceous birds. Phylogenetically, they branch off from the core Galliformes after the Cracidae and before the Odontophoridae. An Eocene fossil lineage, Telecrex, has been associated with guineafowl.");
+            birdScr(view, "Family Numididae", "Guineafowl (/ˈɡɪnifaʊl/; sometimes called \"pet speckled hen\", or \"original fowl\") are birds of the family Numididae in the order Galliformes. They are endemic to Africa and rank among the oldest of the gallinaceous birds. Phylogenetically, they branch off from the core Galliformes after the Cracidae and before the Odontophoridae. An Eocene fossil lineage, Telecrex, has been associated with guineafowl.","Family_Numididae");
         }
     }
 
     public void transformD (View view) {
         if (screen == 2) {
-            birdScr(view, "Family Frigatidae", "Frigatebirds (also listed as \"frigate bird\", \"frigate-bird\", \"frigate\", \"frigate-petrel\")[1] are a family of seabirds called Fregatidae which are found across all tropical and subtropical oceans. The five extant species are classified in a single genus, Fregata. All have predominantly black plumage, long, deeply forked tails and long hooked bills. Females have white underbellies and males have a distinctive red gular pouch.");
+            birdScr(view, "Family Frigatidae", "Frigatebirds (also listed as \"frigate bird\", \"frigate-bird\", \"frigate\", \"frigate-petrel\")[1] are a family of seabirds called Fregatidae which are found across all tropical and subtropical oceans. The five extant species are classified in a single genus, Fregata. All have predominantly black plumage, long, deeply forked tails and long hooked bills. Females have white underbellies and males have a distinctive red gular pouch.","Family_Frigatidae");
         } else if (screen == 7) {
-            birdScr(view, "Struthio camelus", "The common ostrich, or simply ostrich, is a species of large flightless bird native to Africa. It is one of two extant species of ostriches, the only living members of the genus Struthio in the ratite order of birds.");
+            birdScr(view, "Struthio camelus", "The common ostrich, or simply ostrich, is a species of large flightless bird native to Africa. It is one of two extant species of ostriches, the only living members of the genus Struthio in the ratite order of birds.","Struthio_camelus");
         } else if (screen == 15) {
-            birdScr(view, "Family Bucconidae", "The puffbirds and their relatives in the near passerine family Bucconidae are tropical tree-dwelling insectivorous birds that are found from South America up to Mexico. Together with their closest relatives, the jacamars, they form a divergent lineage within the order Piciformes, though the two families are sometimes elevated to a separate order Galbuliformes.");
+            birdScr(view, "Family Bucconidae", "The puffbirds and their relatives in the near passerine family Bucconidae are tropical tree-dwelling insectivorous birds that are found from South America up to Mexico. Together with their closest relatives, the jacamars, they form a divergent lineage within the order Piciformes, though the two families are sometimes elevated to a separate order Galbuliformes.","Family_Bucconidae");
         } else if (screen == 19) {
-            birdScr(view, "Family Pandionidae", "Pandion is a genus of birds of prey, known as ospreys, the only genus of family Pandionidae. Some taxonomic treatments have regarded this genus as describing a single extant species, separated to subspecies or races, while other treatments recognize two extant species.");
+            birdScr(view, "Family Pandionidae", "Pandion is a genus of birds of prey, known as ospreys, the only genus of family Pandionidae. Some taxonomic treatments have regarded this genus as describing a single extant species, separated to subspecies or races, while other treatments recognize two extant species.","Family_Pandionidae");
         } else if (screen == 33) {
-            birdScr(view, "Genus Melanitta", "The scoters are stocky seaducks in the genus Melanitta. The drakes are mostly black and have swollen bills. Females are brown. The genus name is derived from Ancient Greek melas \"black\" and netta \"duck\".");
+            birdScr(view, "Genus Melanitta", "The scoters are stocky seaducks in the genus Melanitta. The drakes are mostly black and have swollen bills. Females are brown. The genus name is derived from Ancient Greek melas \"black\" and netta \"duck\".","Genus_Melanitta");
         } else if (screen == 36) {
-            birdScr(view, "Family Phoenicopterae", "Flamingos and their relatives are well attested in the fossil record, with the first unequivocal member of the Phoenicopteridae, Elornis known from the late Eocene epoch. A considerable number of little-known birds from the Late Cretaceous onwards are sometimes considered to be flamingo ancestors.");
+            birdScr(view, "Family Phoenicopterae", "Flamingos and their relatives are well attested in the fossil record, with the first unequivocal member of the Phoenicopteridae, Elornis known from the late Eocene epoch. A considerable number of little-known birds from the Late Cretaceous onwards are sometimes considered to be flamingo ancestors.","Family_Phoenicopterae");
         } else if (screen == 37) {
             setsc41();
         } else if (screen == 38) {
-            birdScr(view, "Family Hirundinidae", "The swallows, martins and saw-wings, or Hirundinidae, are a family of passerine birds found around the world on all continents, including occasionally in Antarctica. Highly adapted to aerial feeding, they have a distinctive appearance. The term Swallow is used colloquially in Europe as a synonym for the barn swallow.");
+            birdScr(view, "Family Hirundinidae", "The swallows, martins and saw-wings, or Hirundinidae, are a family of passerine birds found around the world on all continents, including occasionally in Antarctica. Highly adapted to aerial feeding, they have a distinctive appearance. The term Swallow is used colloquially in Europe as a synonym for the barn swallow.","Family_Hirundinidae");
         } else if (screen == 39) {
-            birdScr(view, "Family Stercorariidae", "The skuas /ˈskjuːə/ are a group of predatory seabirds with about seven species forming the family Stercorariidae and the genus Stercorarius. The three smaller skuas are called jaegers in American English.");
+            birdScr(view, "Family Stercorariidae", "The skuas /ˈskjuːə/ are a group of predatory seabirds with about seven species forming the family Stercorariidae and the genus Stercorarius. The three smaller skuas are called jaegers in American English.","Family_Stercorariidae");
         } else if (screen == 41) {
-            birdScr(view, "Family Meleagrididae", "Meleagridinae is a subfamily of birds in the family Phasianidae. It includes turkeys and their extinct relatives.");
+            birdScr(view, "Family Meleagrididae", "Meleagridinae is a subfamily of birds in the family Phasianidae. It includes turkeys and their extinct relatives.","Family_Meleagrididae");
         }
     }
 
     public void transformE (View view) {
         if (screen == 2) {
-            birdScr(view, "Family Phaethontidae", "Tropicbirds are a family, Phaethontidae, of tropical pelagic seabirds. They are the sole living representatives of the order Phaethontiformes.");
+            birdScr(view, "Family Phaethontidae", "Tropicbirds are a family, Phaethontidae, of tropical pelagic seabirds. They are the sole living representatives of the order Phaethontiformes.","Family_Phaethontidae");
         } else if (screen == 7) {
-            birdScr(view, "Genus Rhea", "The rheas are large ratites in the order Rheiformes, native to South America, distantly related to the ostrich and emu. Most taxonomic authorities recognize two extant species: the greater or American rhea and the lesser or Darwin's rhea. The IUCN lists the puna rhea as a separate species.");
+            birdScr(view, "Genus Rhea", "The rheas are large ratites in the order Rheiformes, native to South America, distantly related to the ostrich and emu. Most taxonomic authorities recognize two extant species: the greater or American rhea and the lesser or Darwin's rhea. The IUCN lists the puna rhea as a separate species.","Genus_Rhea");
         } else if (screen == 15) {
-            birdScr(view, "Family Ramphastidae", "Toucans (/ˈtuːkæn/, UK: /-kən/) are members of the Neotropical near passerine bird family Ramphastidae. The Ramphastidae are most closely related to the American barbets. They are brightly marked and have large, often-colorful bills. The family includes five genera and over forty different species.");
+            birdScr(view, "Family Ramphastidae", "Toucans (/ˈtuːkæn/, UK: /-kən/) are members of the Neotropical near passerine bird family Ramphastidae. The Ramphastidae are most closely related to the American barbets. They are brightly marked and have large, often-colorful bills. The family includes five genera and over forty different species.","Family_Ramphastidae");
         } else if (screen == 19) {
-            birdScr(view, "Family Sagittaridae", "The secretarybird or secretary bird (Sagittarius serpentarius) is a very large, mostly terrestrial bird of prey. Endemic to Africa, it is usually found in the open grasslands and savannah of the sub-Saharan region. Although a member of the order Accipitriformes, which also includes many other diurnal raptors such as kites, hawks, vultures, and harriers, it is given its own family, Sagittariidae.");
+            birdScr(view, "Family Sagittaridae", "The secretarybird or secretary bird (Sagittarius serpentarius) is a very large, mostly terrestrial bird of prey. Endemic to Africa, it is usually found in the open grasslands and savannah of the sub-Saharan region. Although a member of the order Accipitriformes, which also includes many other diurnal raptors such as kites, hawks, vultures, and harriers, it is given its own family, Sagittariidae.","Family_Sagittaridae");
         } else if (screen == 33) {
-            birdScr(view, "Camptorhynchus labradorius", "The Labrador duck was a North American bird; it has the distinction of being the first endemic North American bird species to become extinct after the Columbian Exchange, with the last known sighting occurring in 1878 in Elmira, New York.");
+            birdScr(view, "Camptorhynchus labradorius", "The Labrador duck was a North American bird; it has the distinction of being the first endemic North American bird species to become extinct after the Columbian Exchange, with the last known sighting occurring in 1878 in Elmira, New York.","Camptorhynchus_labradorius");
         } else if (screen == 37) {
-            birdScr(view, "Order Coraciiformes", "The Coraciiformes are a group of usually colorful birds including the kingfishers, the bee-eaters, the rollers, the motmots, and the todies. They generally have syndactyly, with three forward-pointing toes, though in many kingfishers one of these is missing.");
+            birdScr(view, "Order Coraciiformes", "The Coraciiformes are a group of usually colorful birds including the kingfishers, the bee-eaters, the rollers, the motmots, and the todies. They generally have syndactyly, with three forward-pointing toes, though in many kingfishers one of these is missing.","Order_Coraciiformes");
         } else if (screen == 38) {
-            birdScr(view, "Family Corvidae", "Corvidae is a cosmopolitan family of oscine passerine birds that contains the crows, ravens, rooks, jackdaws, jays, magpies, treepies, choughs, and nutcrackers. In common English, they are known as the crow family, or, more technically, corvids. Over 120 species are described.");
+            birdScr(view, "Family Corvidae", "Corvidae is a cosmopolitan family of oscine passerine birds that contains the crows, ravens, rooks, jackdaws, jays, magpies, treepies, choughs, and nutcrackers. In common English, they are known as the crow family, or, more technically, corvids. Over 120 species are described.","Family_Corvidae");
         } else if (screen == 39) {
-            birdScr(view, "Family Alcidae", "An auk or alcid is a bird of the family Alcidae in the order Charadriiformes. The alcid family includes the murres, guillemots, auklets, puffins, and murrelets. Apart from the extinct great auk, all auks are notable for their ability to \"fly\" under water as well as in the air.");
+            birdScr(view, "Family Alcidae", "An auk or alcid is a bird of the family Alcidae in the order Charadriiformes. The alcid family includes the murres, guillemots, auklets, puffins, and murrelets. Apart from the extinct great auk, all auks are notable for their ability to \"fly\" under water as well as in the air.","Family_Alcidae");
         } else if (screen == 41) {
-            birdScr(view, "Family Opisthocomidae", "Opisthocomidae is a group of birds, the only named family within the order Opisthocomiformes. The only living representative is the hoatzin (Opisthocomus hoazin) which lives in the Amazon and the Orinoco delta in South America. Several fossil species have been identified, including one from Africa and one from Europe.");
+            birdScr(view, "Family Opisthocomidae", "Opisthocomidae is a group of birds, the only named family within the order Opisthocomiformes. The only living representative is the hoatzin (Opisthocomus hoazin) which lives in the Amazon and the Orinoco delta in South America. Several fossil species have been identified, including one from Africa and one from Europe.","Family_Opisthocomidae");
         }
     }
 
     public void transformF (View view) {
         if (screen == 2) {
-            birdScr(view, "Family Anhingidae", "The anhinga, sometimes called snakebird, darter, American darter, or water turkey, is a water bird of the warmer parts of the Americas. The word anhinga comes from the Brazilian Tupi language and means devil bird or snake bird.");
+            birdScr(view, "Family Anhingidae", "The anhinga, sometimes called snakebird, darter, American darter, or water turkey, is a water bird of the warmer parts of the Americas. The word anhinga comes from the Brazilian Tupi language and means devil bird or snake bird.","Family_Anhingidae");
         } else if (screen == 7) {
-            birdScr(view, "Order Dromiceidae", "Flightless ostrich like bird, can weight up to 120 pounds   Previously eaten in Australia, but several species driven to extinction   Emu Family (Dromiceidae) has only one remaining species. The Emus are large flightless birds found in the Australian region.");
+            birdScr(view, "Order Dromiceidae", "Flightless ostrich like bird, can weight up to 120 pounds   Previously eaten in Australia, but several species driven to extinction. Emu Family (Dromiceidae) has only one remaining species. The Emus are large flightless birds found in the Australian region.","Order_Dromiceidae");
         } else if (screen == 15) {
-            birdScr(view, "Family Picidae", "Woodpeckers are part of the family Picidae, a group of near-passerine birds that also consist of piculets, wrynecks, and sapsuckers. Members of this family are found worldwide, except for Australia, New Guinea, New Zealand, Madagascar, and the extreme polar regions. Most species live in forests or woodland habitats, although a few species are known that live in treeless areas, such as rocky hillsides and deserts.");
+            birdScr(view, "Family Picidae", "Woodpeckers are part of the family Picidae, a group of near-passerine birds that also consist of piculets, wrynecks, and sapsuckers. Members of this family are found worldwide, except for Australia, New Guinea, New Zealand, Madagascar, and the extreme polar regions. Most species live in forests or woodland habitats, although a few species are known that live in treeless areas, such as rocky hillsides and deserts.","Family_Picidae");
         } else if (screen == 33) {
-            birdScr(view, "Genus Bucephala", "Bucephala is a genus of diving ducks found in the Northern Hemisphere. The genus name is derived from Ancient Greek boukephalos, \"bullheaded\", from bous \"bull\", and kephale, \"head\", a reference to the crest of the bufflehead making its head look large.");
+            birdScr(view, "Genus Bucephala", "Bucephala is a genus of diving ducks found in the Northern Hemisphere. The genus name is derived from Ancient Greek boukephalos, \"bullheaded\", from bous \"bull\", and kephale, \"head\", a reference to the crest of the bufflehead making its head look large.","Genus_Bucephala");
         } else if (screen == 37) {
-            birdScr(view, "Family Columbidae", "Pigeons and doves constitute the animal family Columbidae and the order Columbiformes, which includes about 42 genera and 310 species. They are stout-bodied birds with short necks, and short slender bills that in some species feature fleshy ceres. They primarily feed on seeds, fruits, and plants. Pigeons and doves are likely the most common birds in the world.");
+            birdScr(view, "Family Columbidae", "Pigeons and doves constitute the animal family Columbidae and the order Columbiformes, which includes about 42 genera and 310 species. They are stout-bodied birds with short necks, and short slender bills that in some species feature fleshy ceres. They primarily feed on seeds, fruits, and plants. Pigeons and doves are likely the most common birds in the world.","Family_Columbidae");
         } else if (screen == 38) {
-            birdScr(view, "Family Paradiseidae", "The birds-of-paradise are members of the family Paradisaeidae of the order Passeriformes. The majority of species are found in eastern Indonesia, Papua New Guinea, and eastern Australia. The family has 42 species in 15 genera. The members of this family are perhaps best known for the plumage of the males of the sexually dimorphic species (the majority).");
+            birdScr(view, "Family Paradiseidae", "The birds-of-paradise are members of the family Paradisaeidae of the order Passeriformes. The majority of species are found in eastern Indonesia, Papua New Guinea, and eastern Australia. The family has 42 species in 15 genera. The members of this family are perhaps best known for the plumage of the males of the sexually dimorphic species (the majority).","Family_Paradiseidae");
         }
     }
 
     public void transformG (View view) {
         if (screen == 7) {
-            birdScr(view, "Order Casuariiformes", "The Casuariiformes is an order of large flightless bird that has four surviving members: the three species of cassowary, and the only remaining species of emu. They are divided into either a single family, Casuariidae, or more typically two, with the emu splitting off into its own family, Dromaiidae.");
+            birdScr(view, "Order Casuariiformes", "The Casuariiformes is an order of large flightless bird that has four surviving members: the three species of cassowary, and the only remaining species of emu. They are divided into either a single family, Casuariidae, or more typically two, with the emu splitting off into its own family, Dromaiidae.","Order_Casuariiformes");
         } else if (screen == 33) {
-            birdScr(view, "Histrionicus histrionicus", "The harlequin duck is a small sea duck. It takes its name from Harlequin, a colourfully dressed character in Commedia dell'arte. The species name comes from the Latin word \"histrio\", \"actor\". In North America it is also known as lords and ladies.");
+            birdScr(view, "Histrionicus histrionicus", "The harlequin duck is a small sea duck. It takes its name from Harlequin, a colourfully dressed character in Commedia dell'arte. The species name comes from the Latin word \"histrio\", \"actor\". In North America it is also known as lords and ladies.","Histrionicus_histrionicus");
         } else if (screen == 38) {
-            birdScr(view, "Family Paridae", "The tits, chickadees, and titmice constitute the Paridae, a large family of small passerine birds which occur mainly in the Northern Hemisphere and Africa. Most were formerly classified in the genus Parus.");
+            birdScr(view, "Family Paridae", "The tits, chickadees, and titmice constitute the Paridae, a large family of small passerine birds which occur mainly in the Northern Hemisphere and Africa. Most were formerly classified in the genus Parus.","Family_Paridae");
         }
     }
 
     public void transformH (View view) {
         if (screen == 7) {
-            birdScr(view, "Family Apterigidae", "Kiwi (/ˈkiːwi/ KEE-wee)[4] or kiwis are flightless birds native to New Zealand, in the genus Apteryx and family Apterygidae. Approximately the size of a domestic chicken, kiwi are by far the smallest living ratites (which also consist of ostriches, emus, rheas, and cassowaries).");
+            birdScr(view, "Family Apterigidae", "Kiwi (/ˈkiːwi/ KEE-wee)[4] or kiwis are flightless birds native to New Zealand, in the genus Apteryx and family Apterygidae. Approximately the size of a domestic chicken, kiwi are by far the smallest living ratites (which also consist of ostriches, emus, rheas, and cassowaries).","Family_Apterigidae");
         } else if (screen == 33) {
-            birdScr(view, "Clangula hyemalis", "The long-tailed duck, once known as oldsquaw, is a medium-sized sea duck. It is the only living member of its genus, Clangula. This was formerly used for the goldeneyes, with the long-tailed duck being placed in Harelda, but the latter is the type species of the genus.");
+            birdScr(view, "Clangula hyemalis", "The long-tailed duck, once known as oldsquaw, is a medium-sized sea duck. It is the only living member of its genus, Clangula. This was formerly used for the goldeneyes, with the long-tailed duck being placed in Harelda, but the latter is the type species of the genus.","Clangula_hyemalis");
         } else if (screen == 38) {
-            birdScr(view, "Family Certhiidae", "The treecreepers are a family, Certhiidae, of small passerine birds, widespread in wooded regions of the Northern Hemisphere and sub-Saharan Africa. The family contains ten species in two genera, Certhia and Salpornis. Their plumage is dull-coloured, and as their name implies, they climb over the surface of trees in search of food.");
+            birdScr(view, "Family Certhiidae", "The treecreepers are a family, Certhiidae, of small passerine birds, widespread in wooded regions of the Northern Hemisphere and sub-Saharan Africa. The family contains ten species in two genera, Certhia and Salpornis. Their plumage is dull-coloured, and as their name implies, they climb over the surface of trees in search of food.","Family_Certhiidae");
         }
     }
 
     public void transformI (View view) {
         if (screen == 33) {
-            birdScr(view, "Genus Anas", "Anas is a genus of dabbling ducks. It includes the pintails, most teals, and the mallard and its close relatives. It formerly included additional species but following the publication of a molecular phylogenetic study in 2009 the genus was spit into four separate genera. The genus now contains 31 living species.");
+            birdScr(view, "Genus Anas", "Anas is a genus of dabbling ducks. It includes the pintails, most teals, and the mallard and its close relatives. It formerly included additional species but following the publication of a molecular phylogenetic study in 2009 the genus was spit into four separate genera. The genus now contains 31 living species.","Genus_Anas");
         } else if (screen == 38) {
-            birdScr(view, "Family Sittidae", "The nuthatches constitute a genus, Sitta, of small passerine birds belonging to the family Sittidae. Characterised by large heads, short tails, and powerful bills and feet, nuthatches advertise their territory using loud, simple songs. Most species exhibit grey or bluish upperparts and a black eye stripe.");
+            birdScr(view, "Family Sittidae", "The nuthatches constitute a genus, Sitta, of small passerine birds belonging to the family Sittidae. Characterised by large heads, short tails, and powerful bills and feet, nuthatches advertise their territory using loud, simple songs. Most species exhibit grey or bluish upperparts and a black eye stripe.","Family_Sittidae");
         }
     }
 
     public void transformJ (View view) {
         if (screen == 38) {
-            birdScr(view, "Family Troglodytidae", "Family Troglodytidae - Wrens. Within the huge order Passeriformes, the family Troglodytidae includes small insectivore birds. They are New World species except the Eurasian Wren (Troglodytes troglodytes) which also occurs in the Old World.");
+            birdScr(view, "Family Troglodytidae", "Family Troglodytidae - Wrens. Within the huge order Passeriformes, the family Troglodytidae includes small insectivore birds. They are New World species except the Eurasian Wren (Troglodytes troglodytes) which also occurs in the Old World.","Family_Troglodytidae");
         }
     }
 
     public void transformK (View view) {
         if (screen == 38) {
-            birdScr(view, "Family Mimidae", "The mimids are the New World family of passerine birds, Mimidae, that includes thrashers, mockingbirds, tremblers, and the New World catbirds. As their name (Latin for \"mimic\") suggests, these birds are notable for their vocalization, especially some species' remarkable ability to mimic a wide variety of birds and other sounds heard outdoors.");
+            birdScr(view, "Family Mimidae", "The mimids are the New World family of passerine birds, Mimidae, that includes thrashers, mockingbirds, tremblers, and the New World catbirds. As their name (Latin for \"mimic\") suggests, these birds are notable for their vocalization, especially some species' remarkable ability to mimic a wide variety of birds and other sounds heard outdoors.","Family_Mimidae");
         }
     }
 
     public void transformL (View view) {
         if (screen == 38) {
-            birdScr(view, "Family Turdidae", "The thrushes are a family, Turdidae, of passerine birds with a worldwide distribution. The family was once much larger before biologists determined the subfamily Saxicolinae, which includes the chats and European robins, were Old World flycatchers. Thrushes are small to medium-sized ground living birds that feed on insects, other invertebrates and fruit.");
+            birdScr(view, "Family Turdidae", "The thrushes are a family, Turdidae, of passerine birds with a worldwide distribution. The family was once much larger before biologists determined the subfamily Saxicolinae, which includes the chats and European robins, were Old World flycatchers. Thrushes are small to medium-sized ground living birds that feed on insects, other invertebrates and fruit.","Family_Turdidae");
         }
     }
 
     public void transformM (View view) {
         if (screen == 38) {
-            birdScr(view, "Family Sylviidae", "Sylviidae is a family of passerine birds that includes the typical warblers, parrotbills, the wrentit, and a number of babblers formerly placed within the Old World babbler family. They are found in Eurasia, Africa, and the west coast of North America.");
+            birdScr(view, "Family Sylviidae", "Sylviidae is a family of passerine birds that includes the typical warblers, parrotbills, the wrentit, and a number of babblers formerly placed within the Old World babbler family. They are found in Eurasia, Africa, and the west coast of North America.","Family_Sylviidae");
         }
     }
 
     public void transformN (View view) {
         if (screen == 38) {
-            birdScr(view, "Family Bombycillidae", "The waxwings are passerine birds classified in the genus Bombycilla. They are brown and pale grey with silky plumage, a black and white eyestripe, a crest, a square-cut tail and pointed wings. Some of the wing feathers have red tips, the resemblance of which to sealing wax gives these birds their common name. According to most authorities, this is the only genus placed in the family Bombycillidae, although Phainoptila is sometimes included.");
+            birdScr(view, "Family Bombycillidae", "The waxwings are passerine birds classified in the genus Bombycilla. They are brown and pale grey with silky plumage, a black and white eyestripe, a crest, a square-cut tail and pointed wings. Some of the wing feathers have red tips, the resemblance of which to sealing wax gives these birds their common name. According to most authorities, this is the only genus placed in the family Bombycillidae, although Phainoptila is sometimes included.","Family_Bombycillidae");
         }
     }
 
     public void transformO (View view) {
         if (screen == 38) {
-            birdScr(view, "Family Laniidae", "Shrikes (/ʃraɪk/) are carnivorous passerine birds of the family Laniidae. The family is composed of 31 species in four genera. They are fairly closely related to the bush-shrike family Malaconotidae.");
+            birdScr(view, "Family Laniidae", "Shrikes (/ʃraɪk/) are carnivorous passerine birds of the family Laniidae. The family is composed of 31 species in four genera. They are fairly closely related to the bush-shrike family Malaconotidae.","Family_Laniidae");
         }
     }
 
     public void transformP (View view) {
         if (screen == 38) {
-            birdScr(view, "Family Sturnidae", "Starlings are small to medium-sized passerine birds in the family Sturnidae. The name \"Sturnidae\" comes from the Latin word for starling, sturnus. Many Asian species, particularly the larger ones, are called mynas, and many African species are known as glossy starlings because of their iridescent plumage. Starlings are native to Europe, Asia and Africa, as well as northern Australia and the islands of the tropical Pacific.");
+            birdScr(view, "Family Sturnidae", "Starlings are small to medium-sized passerine birds in the family Sturnidae. The name \"Sturnidae\" comes from the Latin word for starling, sturnus. Many Asian species, particularly the larger ones, are called mynas, and many African species are known as glossy starlings because of their iridescent plumage. Starlings are native to Europe, Asia and Africa, as well as northern Australia and the islands of the tropical Pacific.","Family_Sturnidae");
         }
     }
 
     public void transformQ (View view) {
         if (screen == 38) {
-            birdScr(view, "Family Vireonidae", "The vireos /ˈvɪrioʊz/ make up a family, Vireonidae, of small to medium-sized passerine birds found in the New World (Canada to Argentina, including Bermuda and the West Indies) and Southeast Asia, \"Vireo\" is a Latin word referring to a green migratory bird, perhaps the female golden oriole, possibly the European greenfinch.");
+            birdScr(view, "Family Vireonidae", "The vireos /ˈvɪrioʊz/ make up a family, Vireonidae, of small to medium-sized passerine birds found in the New World (Canada to Argentina, including Bermuda and the West Indies) and Southeast Asia, \"Vireo\" is a Latin word referring to a green migratory bird, perhaps the female golden oriole, possibly the European greenfinch.","Family_Vireonidae");
         }
     }
 
     public void transformR (View view) {
         if (screen == 38) {
-            birdScr(view, "Family Parulidae", "The New World warblers or wood-warblers are a group of small, often colorful, passerine birds which make up the family Parulidae and are restricted to the New World. They are not closely related to Old World warblers or to Australian warblers. Most are arboreal, but some, like the ovenbird and the two waterthrushes, are primarily terrestrial. Most members of this family are insectivores.");
+            birdScr(view, "Family Parulidae", "The New World warblers or wood-warblers are a group of small, often colorful, passerine birds which make up the family Parulidae and are restricted to the New World. They are not closely related to Old World warblers or to Australian warblers. Most are arboreal, but some, like the ovenbird and the two waterthrushes, are primarily terrestrial. Most members of this family are insectivores.","Family_Parulidae");
         }
     }
 
     public void transformS (View view) {
         if (screen == 38) {
-            birdScr(view, "Family Icteridae", "Icterids make up a family (Icteridae) of small- to medium-sized, often colorful, New-World passerine birds. Most species have black as a predominant plumage color, often enlivened by yellow, orange or red. The species in the family vary widely in size, shape, behavior and coloration. The name, meaning \"jaundiced ones\" (from the prominent yellow feathers of many species) comes from the Ancient Greek ikteros via the Latin ictericus.");
+            birdScr(view, "Family Icteridae", "Icterids make up a family (Icteridae) of small- to medium-sized, often colorful, New-World passerine birds. Most species have black as a predominant plumage color, often enlivened by yellow, orange or red. The species in the family vary widely in size, shape, behavior and coloration. The name, meaning \"jaundiced ones\" (from the prominent yellow feathers of many species) comes from the Ancient Greek ikteros via the Latin ictericus.","Family_Icteridae");
         }
     }
 
     public void transformT (View view) {
         if (screen == 38) {
-            birdScr(view, "Family Thraupidae", "The tanagers (singular /ˈtænədʒər/) comprise the bird family Thraupidae, in the order Passeriformes. The family has an American distribution. The Thraupidae are the second-largest family of birds and represent about 4% of all avian species and 12% of the Neotropical birds.");
+            birdScr(view, "Family Thraupidae", "The tanagers (singular /ˈtænədʒər/) comprise the bird family Thraupidae, in the order Passeriformes. The family has an American distribution. The Thraupidae are the second-largest family of birds and represent about 4% of all avian species and 12% of the Neotropical birds.","Family_Thraupidae");
         }
     }
 
     public void transformU (View view) {
         if (screen == 38) {
-            birdScr(view, "Family Fringillidae", "The true finches are small to medium-sized passerine birds in the family Fringillidae. Finches have stout conical bills adapted for eating seeds and often have colourful plumage. They occupy a great range of habitats where they are usually resident and do not migrate. They have a worldwide distribution except for Australia and the polar regions. The family includes species known as siskins, canaries, redpolls, serins, grosbeaks and euphonias.");
+            birdScr(view, "Family Fringillidae", "The true finches are small to medium-sized passerine birds in the family Fringillidae. Finches have stout conical bills adapted for eating seeds and often have colourful plumage. They occupy a great range of habitats where they are usually resident and do not migrate. They have a worldwide distribution except for Australia and the polar regions. The family includes species known as siskins, canaries, redpolls, serins, grosbeaks and euphonias.","Family_Fringillidae");
         }
     }
 
     public void transformV (View view) {
         if (screen == 38) {
-            birdScr(view, "Family Ploceidae", "Ploceidae is a family of small passerine birds, many of which are called weavers, weaverbirds or weaver finches. These names come from the nests of intricately woven vegetation that many birds of the family make. In most recent classifications, Ploceidae is a clade, which excludes some birds that have historically been placed in the family, such as some of the sparrows.");
+            birdScr(view, "Family Ploceidae", "Ploceidae is a family of small passerine birds, many of which are called weavers, weaverbirds or weaver finches. These names come from the nests of intricately woven vegetation that many birds of the family make. In most recent classifications, Ploceidae is a clade, which excludes some birds that have historically been placed in the family, such as some of the sparrows.","Family_Ploceidae");
         }
     }
 

@@ -235,7 +235,7 @@
                 android:id="@+id/buttonT"
                 android:layout_width="366dp"
                 android:layout_height="82dp"
-                android:onClick="transformS"
+                android:onClick="transformT"
                 android:tag="20"
                 android:text="T"
                 tools:layout_editor_absoluteX="8dp"
