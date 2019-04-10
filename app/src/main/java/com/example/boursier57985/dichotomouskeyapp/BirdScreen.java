@@ -3,6 +3,7 @@ package com.example.boursier57985.dichotomouskeyapp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -16,6 +17,8 @@ public class BirdScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bird_screen);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
         String name = extras.getString("EXTRA_NAME");
@@ -40,6 +43,11 @@ public class BirdScreen extends AppCompatActivity {
     public void sendMessage(View view) {
         Intent intent = new Intent(this, Search1Activity.class);
         intent.putExtra("EXTRA_START_SCREEN", lastScr);
+        startActivity(intent);
+    }
+
+    public void GoHome(View view) {
+        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
         startActivity(intent);
     }
 }

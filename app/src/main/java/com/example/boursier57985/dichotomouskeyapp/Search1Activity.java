@@ -4,6 +4,9 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,6 +57,8 @@ public class Search1Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         screen = getIntent().getIntExtra("EXTRA_START_SCREEN", 0);
         setContentView(R.layout.activity_search1);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         buttonA = (Button) findViewById(R.id.buttonA);
         buttonB = (Button) findViewById(R.id.buttonB);
         buttonC = (Button) findViewById(R.id.buttonC);
@@ -108,7 +114,29 @@ public class Search1Activity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.back) {
+            backTransform();
+        }else{
+            GoHome();
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
     public void SetScreenOnStart(int scr) {
         if (scr == 1) {
             setsc1();
@@ -206,7 +234,7 @@ public class Search1Activity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void GoHome(View view) {
+    public void GoHome() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
@@ -222,13 +250,13 @@ public class Search1Activity extends AppCompatActivity {
         }
     }
 
-    public void backTransform (View view) {
+    public void backTransform () {
         if (screen == 1) {
-            GoHome(view);
+            GoHome();
         } else if (screen == 2) {
             setsc1();
         } else if (screen == 3) {
-            setsc2();
+            setsc1();
         } else if (screen == 4) {
             setsc3();
         } else if (screen == 5) {
