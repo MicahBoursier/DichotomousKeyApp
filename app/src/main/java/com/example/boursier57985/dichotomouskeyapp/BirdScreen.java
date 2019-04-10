@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -35,18 +37,38 @@ public class BirdScreen extends AppCompatActivity {
         imageView.setImageResource(id);
         ((ThisApp) this.getApplication()).addBird(name, desc);
     }
-
-    public void backToSearch (View view) {
-        sendMessage(view);
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
     }
 
-    public void sendMessage(View view) {
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.back) {
+            sendMessage();
+        }else{
+            GoHome();
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+
+    public void sendMessage() {
         Intent intent = new Intent(this, Search1Activity.class);
         intent.putExtra("EXTRA_START_SCREEN", lastScr);
         startActivity(intent);
     }
 
-    public void GoHome(View view) {
+    public void GoHome() {
         Intent intent = new Intent(getApplicationContext(),MainActivity.class);
         startActivity(intent);
     }
