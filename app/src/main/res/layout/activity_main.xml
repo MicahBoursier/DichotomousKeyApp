@@ -8,9 +8,7 @@
     tools:context=".MainActivity"
     >
 
-    <include
-        android:id="@+id/toolbar"
-        layout = "@layout/toolbar"/>
+
 
     <Button
         android:id="@+id/searchButton"

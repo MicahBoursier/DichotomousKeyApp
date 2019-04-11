@@ -14,13 +14,13 @@
     <TextView
         android:id="@+id/nameView"
         android:layout_width="266dp"
-        android:layout_height="28dp"
+        android:layout_height="wrap_content"
 
+        android:layout_below="@+id/toolbar"
+        android:layout_alignLeft="@+id/descView"
         android:text="Bird"
         android:textColor="@android:color/black"
-        android:textSize="24sp"
-        android:layout_below="@+id/toolbar"
-        android:layout_centerHorizontal="true"/>
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/descView"
@@ -36,17 +36,10 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="300dp"
-        android:layout_height="200dp"
-
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/descView" />
+        android:layout_width="335dp"
+        android:layout_height="210dp"
+        android:layout_below="@+id/descView"
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>
